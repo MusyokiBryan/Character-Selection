@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; 
-using UnityEngine.UI; 
+using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterManager : MonoBehaviour
 {
-    public CharacterSave characterDB;
+    public CharacterSave characterDB; //refence to the character save scriptable object
 
     public Text nameText;
-    public SpriteRenderer artworkSprite;
+
+    public SpriteRenderer artworkSprite; //these 2 are referenced to the selected character and name in unity
 
     private int selectedOption = 0;
-    // Start is called before the first frame update
+
     void Start()
     {
-        UpdateCharacter(selectedOption);
+        UpdateCharacter (selectedOption);
     }
+
     public void NextOption()
     {
         selectedOption++;
@@ -25,21 +27,21 @@ public class CharacterManager : MonoBehaviour
             selectedOption = 0;
         }
 
-        UpdateCharacter(selectedOption);
+        UpdateCharacter (selectedOption);
     }
 
     public void BackOption()
     {
         selectedOption--;
 
-        if(selectedOption < 0)
+        if (selectedOption < 0)
         {
-            selectedOption = characterDB.CharacterCount -1;
+            selectedOption = characterDB.CharacterCount - 1;
         }
-        UpdateCharacter(selectedOption);
+        UpdateCharacter (selectedOption);
     }
 
-    private void UpdateCharacter(int selectedOption)
+    private void UpdateCharacter(int selectedOption) //retreiving name and sprite from the scriptable onject DB
     {
         Character character = characterDB.GetCharacter(selectedOption);
         artworkSprite.sprite = character.characterSprite;

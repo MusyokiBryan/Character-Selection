@@ -17,3 +17,7 @@ MonoBehaviour:
     characterSprite: {fileID: 21300000, guid: 648602cbb7a640e45a0c064e07801f2d, type: 3}
   - characterName: Mario
     characterSprite: {fileID: 21300000, guid: 267fe08ceef454d43a95af1e03418dec, type: 3}
+  - characterName: Wolf
+    characterSprite: {fileID: 21300000, guid: 8e30995544fcbed49ab86886ffb7dee8, type: 3}
+  - characterName: Luigi
+    characterSprite: {fileID: 21300000, guid: 3bfadf35231cf2042891d87c967b30c9, type: 3}
